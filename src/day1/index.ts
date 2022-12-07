@@ -1,9 +1,6 @@
-const { readFileSync } = Deno
+import { readFile } from '../helpers/readFile.ts'
 
-// Setup for read input file
-const decoder = new TextDecoder('utf-8');
-const fileInput = readFileSync('input.txt');
-const inputString = decoder.decode(fileInput)
+const inputString = readFile()
 
 // Divide input by groups
 const splittedData = inputString.split('\n')

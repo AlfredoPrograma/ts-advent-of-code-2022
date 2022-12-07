@@ -1,9 +1,6 @@
-const { readFileSync } = Deno;
+import { readFile } from '../helpers/readFile.ts'
 
-const decoder = new TextDecoder('utf-8');
-const fileInput = readFileSync('input.txt');
-const inputString = decoder.decode(fileInput)
-
+const inputString = readFile()
 const splittedData = inputString.split('\n')
 
 type Shape = 'ROCK' | 'PAPER' | 'SCISSORS'
@@ -53,3 +50,6 @@ for (const line of splittedData) {
   roundPoints += roundValueMap[opponentShape]
   totalPoints += roundPoints 
 }
+
+// LOG RESULT
+console.log(totalPoints)
